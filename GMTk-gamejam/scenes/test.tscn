@@ -8,4 +8,8 @@
 [node name="player" parent="." unique_id=1948307944 instance=ExtResource("1_errlg")]
 position = Vector2(617, 317)
 script = ExtResource("2_bl13t")
-speed = 400
+speed = 80
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1275611898]
+position = Vector2(617, 317)
+zoom = Vector2(3, 3)
