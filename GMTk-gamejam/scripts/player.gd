@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 300
+@export var timer: Label
 
 var direction = Vector2.ZERO
 var direction_old
@@ -8,6 +9,8 @@ var Dialog = false
 var interact = false
 var stun = false
 var current_npc = null  # the NPC we're currently overlapping
+
+var collection = [0, 0, 0, 0, 0, 0, 0]
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
@@ -50,6 +53,8 @@ func _process(delta: float) -> void:
 			Dialog = true
 			stun = true
 			Dialog_Start(current_npc)
+	
+	print(collection)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -57,6 +62,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("get_dialogue_resource"):
 		interact = true
 		current_npc = body
+	
+	elif body.has_method("get_item_name"):
+		collection[body.get_item_id()] = 1
+		print(body.get_item_name())
+		timer.seconds += body.get_time()
+		body.free()
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

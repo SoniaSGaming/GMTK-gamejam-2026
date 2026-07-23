@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://io1uawcnp0tn" path="res://scripts/dialoguenpc.gd" id="3_74lek"]
 [ext_resource type="Texture2D" uid="uid://cwwted8duq7sv" path="res://Assets/pfpdecidv2.png" id="3_iyx0m"]
 [ext_resource type="Resource" uid="uid://ciomnb11dn1cd" path="res://Dialogue/DialogStart.dialogue" id="4_j5jx5"]
+[ext_resource type="PackedScene" uid="uid://b7g24vvavaae6" path="res://prefabs/collectable.tscn" id="5_j5jx5"]
+[ext_resource type="Texture2D" uid="uid://by7ajiv8hw65j" path="res://asstes/soda_can.png" id="6_at5dv"]
+[ext_resource type="Texture2D" uid="uid://bu7fkj8y02bly" path="res://asstes/bottle.png" id="7_jcd4p"]
+[ext_resource type="PackedScene" uid="uid://cttya3w4fu2r4" path="res://prefabs/timer.tscn" id="8_jcd4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bka4f"]
 size = Vector2(126, 124)
@@ -13,15 +17,16 @@ size = Vector2(451, 402)
 
 [node name="Node2D" type="Node2D" unique_id=808634856]
 
-[node name="player" parent="." unique_id=1948307944 instance=ExtResource("1_errlg")]
+[node name="player" parent="." unique_id=1948307944 node_paths=PackedStringArray("timer") instance=ExtResource("1_errlg")]
 position = Vector2(738, 330)
+timer = NodePath("../Timer")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1275611898]
 position = Vector2(617, 317)
 zoom = Vector2(3, 3)
 
 [node name="NPC" type="StaticBody2D" parent="." unique_id=338079054]
-position = Vector2(467, 325)
+position = Vector2(-142, 332)
 script = ExtResource("3_74lek")
 dialogue_resource = ExtResource("4_j5jx5")
 metadata/_edit_group_ = true
@@ -38,3 +43,21 @@ shape = SubResource("RectangleShape2D_bka4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D" unique_id=1851599596]
 shape = SubResource("RectangleShape2D_bl13t")
+
+[node name="soda_col" parent="." unique_id=601749160 instance=ExtResource("5_j5jx5")]
+position = Vector2(472, 356)
+icon = ExtResource("6_at5dv")
+bonus_time = 15
+
+[node name="collectable" parent="." unique_id=43400395 instance=ExtResource("5_j5jx5")]
+position = Vector2(468, 283)
+item_id = 3
+item_name = "water"
+icon = ExtResource("7_jcd4p")
+bonus_time = 20
+
+[node name="Timer" parent="." unique_id=90223983 instance=ExtResource("8_jcd4p")]
+offset_left = 603.0
+offset_top = 213.0
+offset_right = 643.0
+offset_bottom = 236.0
