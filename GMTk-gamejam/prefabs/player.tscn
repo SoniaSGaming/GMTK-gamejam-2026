@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ypyvrm2u10eg"]
 
 [ext_resource type="Texture2D" uid="uid://c3smdtoi6cj25" path="res://asstes/elback.png" id="1_kbsxf"]
+[ext_resource type="Script" uid="uid://c1nam1brybac1" path="res://scripts/player.gd" id="1_m2qjg"]
 [ext_resource type="Texture2D" uid="uid://dftqpgcdcx8pm" path="res://asstes/el_fromt.png" id="2_rgeog"]
 [ext_resource type="Texture2D" uid="uid://cq1xvjhkvupcm" path="res://asstes/el_left.png" id="3_opo22"]
 [ext_resource type="Texture2D" uid="uid://c3b2jelpkooqj" path="res://asstes/el_right.png" id="4_8rb0w"]
@@ -12,35 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://d0prvlpm6j805" path="res://asstes/el_left_walk_2.png" id="10_m2qjg"]
 [ext_resource type="Texture2D" uid="uid://bn6n2kji8pxwb" path="res://asstes/el_right_walk_1.png" id="11_llb5v"]
 [ext_resource type="Texture2D" uid="uid://bsv70b4t5lgtf" path="res://asstes/el_right_walk_2.png" id="12_x0bak"]
-
-[sub_resource type="GDScript" id="GDScript_4dohe"]
-resource_name = "test"
-script/source = "extends CharacterBody2D
-
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b5cbe"]
 animations = [{
@@ -123,8 +95,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgcvo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktfun"]
+size = Vector2(27.5, 35)
+
 [node name="player" type="CharacterBody2D" unique_id=1948307944]
-script = SubResource("GDScript_4dohe")
+script = ExtResource("1_m2qjg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2048813393]
 sprite_frames = SubResource("SpriteFrames_b5cbe")
@@ -133,3 +108,12 @@ autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1417544713]
 shape = SubResource("CapsuleShape2D_qgcvo")
+
+[node name="NPCinteract" type="Area2D" parent="." unique_id=992485838]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCinteract" unique_id=1034043162]
+position = Vector2(-0.25, 0.5)
+shape = SubResource("RectangleShape2D_ktfun")
+
+[connection signal="body_entered" from="NPCinteract" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="NPCinteract" to="." method="_on_area_2d_body_exited"]
