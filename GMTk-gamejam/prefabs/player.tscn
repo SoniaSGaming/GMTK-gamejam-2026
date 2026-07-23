@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://ypyvrm2u10eg"]
 
-[ext_resource type="Texture2D" uid="uid://d33i71j8nr8y2" path="res://icon.svg" id="1_72ieh"]
+[ext_resource type="Texture2D" uid="uid://c3smdtoi6cj25" path="res://asstes/elback.png" id="1_kbsxf"]
+[ext_resource type="Texture2D" uid="uid://dftqpgcdcx8pm" path="res://asstes/el_fromt.png" id="2_rgeog"]
+[ext_resource type="Texture2D" uid="uid://cq1xvjhkvupcm" path="res://asstes/el_left.png" id="3_opo22"]
+[ext_resource type="Texture2D" uid="uid://c3b2jelpkooqj" path="res://asstes/el_right.png" id="4_8rb0w"]
+[ext_resource type="Texture2D" uid="uid://ch2hun5w2ss7v" path="res://asstes/el_back_walk_1.png" id="5_sd3sa"]
+[ext_resource type="Texture2D" uid="uid://cpw6t0egnwdsr" path="res://asstes/el_back_walk_2.png" id="6_m2qjg"]
+[ext_resource type="Texture2D" uid="uid://ctkh538p1jgg0" path="res://asstes/el_walk_front_1.png" id="7_llb5v"]
+[ext_resource type="Texture2D" uid="uid://crabc07cdspyj" path="res://asstes/el_walk_front_2.png" id="8_x0bak"]
+[ext_resource type="Texture2D" uid="uid://c0urj7vsignql" path="res://asstes/el_left_walk_1.png" id="9_sd3sa"]
+[ext_resource type="Texture2D" uid="uid://d0prvlpm6j805" path="res://asstes/el_left_walk_2.png" id="10_m2qjg"]
+[ext_resource type="Texture2D" uid="uid://bn6n2kji8pxwb" path="res://asstes/el_right_walk_1.png" id="11_llb5v"]
+[ext_resource type="Texture2D" uid="uid://bsv70b4t5lgtf" path="res://asstes/el_right_walk_2.png" id="12_x0bak"]
 
 [sub_resource type="GDScript" id="GDScript_4dohe"]
 resource_name = "test"
@@ -31,14 +42,94 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5cbe"]
-size = Vector2(128, 128)
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5cbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kbsxf")
+}],
+"loop": 1,
+"name": &"idle_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rgeog")
+}],
+"loop": 1,
+"name": &"idle_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_opo22")
+}],
+"loop": 1,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8rb0w")
+}],
+"loop": 1,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_sd3sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m2qjg")
+}],
+"loop": 1,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_llb5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x0bak")
+}],
+"loop": 1,
+"name": &"walk_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_sd3sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m2qjg")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_llb5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_x0bak")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgcvo"]
 
 [node name="player" type="CharacterBody2D" unique_id=1948307944]
 script = SubResource("GDScript_4dohe")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=112990600]
-texture = ExtResource("1_72ieh")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2048813393]
+sprite_frames = SubResource("SpriteFrames_b5cbe")
+animation = &"walk_right"
+autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1417544713]
-shape = SubResource("RectangleShape2D_b5cbe")
+shape = SubResource("CapsuleShape2D_qgcvo")

@@ -5,25 +5,45 @@ var direction = Vector2.ZERO
 var Dialog = false
 var interact = false
 var stun = false
+@onready var _animated_sprite = $AnimatedSprite2D
+var direction_old
 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	direction_old = direction
+	
 	velocity = Vector2.ZERO
 	direction = Vector2.ZERO
 	
-	if Input.is_action_pressed("up") and stun == false:
+	#_animated_sprite.play("walk_front")
+	
+	if Input.is_action_pressed("up") and stun == false::
 		direction.y = -1
-	if Input.is_action_pressed("down") and stun == false:
+		_animated_sprite.play("walk_back")
+	if Input.is_action_pressed("down") and stun == false::
 		direction.y = 1
-	if Input.is_action_pressed("right") and stun == false:
+		_animated_sprite.play("walk_front")
+	if Input.is_action_pressed("right") and stun == false::
 		direction.x = 1
-	if Input.is_action_pressed("left") and stun == false:
+		_animated_sprite.play("walk_right")
+	if Input.is_action_pressed("left") and stun == false::
 		direction.x = -1
+		_animated_sprite.play("walk_left")
 	
 	
 	velocity = direction.normalized() * speed
+	if velocity.x == 0 && velocity.y == 0:
+		if direction_old.x == 1:
+			_animated_sprite.play("idle_right")
+		if direction_old.y == 1:
+			_animated_sprite.play("idle_front")
+		if direction_old.y == -1:
+			_animated_sprite.play("idle_back")
+		if direction_old.x == -1:
+			_animated_sprite.play("idle_left")
+	
 	move_and_slide()
 	
 	if interact == true:
