@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c7pqfxvypvo1g"]
+
+[ext_resource type="Script" uid="uid://io1uawcnp0tn" path="res://scripts/dialoguenpc.gd" id="1_cuwdc"]
+[ext_resource type="Texture2D" uid="uid://c3sde8l0a806b" path="res://asstes/naveah.png" id="2_1ov3m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktfun"]
+
+[node name="npc" type="StaticBody2D" unique_id=381388874]
+script = ExtResource("1_cuwdc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=66850758]
+texture = ExtResource("2_1ov3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=788256909]
+shape = SubResource("CapsuleShape2D_ktfun")

@@ -96,10 +96,11 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgcvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktfun"]
-size = Vector2(27.5, 35)
+size = Vector2(53, 49)
 
 [node name="player" type="CharacterBody2D" unique_id=1948307944]
 script = ExtResource("1_m2qjg")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2048813393]
 sprite_frames = SubResource("SpriteFrames_b5cbe")
@@ -112,7 +113,6 @@ shape = SubResource("CapsuleShape2D_qgcvo")
 [node name="NPCinteract" type="Area2D" parent="." unique_id=992485838]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCinteract" unique_id=1034043162]
-position = Vector2(-0.25, 0.5)
 shape = SubResource("RectangleShape2D_ktfun")
 
 [connection signal="body_entered" from="NPCinteract" to="." method="_on_area_2d_body_entered"]
