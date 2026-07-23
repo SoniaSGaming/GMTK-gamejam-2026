@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xthrj8svby61"]
 
 [ext_resource type="PackedScene" uid="uid://ypyvrm2u10eg" path="res://prefabs/player.tscn" id="1_errlg"]
-[ext_resource type="Script" uid="uid://c1nam1brybac1" path="res://prefabs/player.gd" id="2_bl13t"]
+[ext_resource type="Script" uid="uid://c1nam1brybac1" path="res://scripts/player.gd" id="2_bl13t"]
 
 [node name="Node2D" type="Node2D" unique_id=808634856]
 
