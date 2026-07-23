@@ -7,7 +7,6 @@ var interact = false
 var stun = false
 
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	velocity = Vector2.ZERO
@@ -34,7 +33,6 @@ func _process(delta: float) -> void:
 	if interact == true:
 		if Input.is_action_just_pressed("Interact") and Dialog == false:
 			print("VORBESTE")
-			DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/DialogStart.dialogue"), "start")
 			Dialog = true
 			stun = true
 			Dialog_Start()
