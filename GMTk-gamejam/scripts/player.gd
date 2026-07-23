@@ -2,12 +2,11 @@ extends CharacterBody2D
 
 @export var speed = 300
 var direction = Vector2.ZERO
+var Dialog = false
+var interact = false
+var stun = false
 @onready var _animated_sprite = $AnimatedSprite2D
 var direction_old
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,20 +18,19 @@ func _process(delta: float) -> void:
 	
 	#_animated_sprite.play("walk_front")
 	
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed("up") and stun == false::
 		direction.y = -1
 		_animated_sprite.play("walk_back")
-	if Input.is_action_pressed("down"):
+	if Input.is_action_pressed("down") and stun == false::
 		direction.y = 1
 		_animated_sprite.play("walk_front")
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") and stun == false::
 		direction.x = 1
 		_animated_sprite.play("walk_right")
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left") and stun == false::
 		direction.x = -1
 		_animated_sprite.play("walk_left")
 	
-	#print(velocity)
 	
 	velocity = direction.normalized() * speed
 	if velocity.x == 0 && velocity.y == 0:
@@ -46,3 +44,31 @@ func _process(delta: float) -> void:
 			_animated_sprite.play("idle_left")
 	
 	move_and_slide()
+	
+	if interact == true:
+		print("yay")
+	if interact == false:
+		print("no")
+	
+	if interact == true:
+		if Input.is_action_just_pressed("Interact") and Dialog == false:
+			print("VORBESTE")
+			Dialog = true
+			stun = true
+			Dialog_Start()
+
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+	interact = true
+
+
+func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
+	interact = false
+
+func Dialog_Start():
+	
+	var Dialog_Balloon = DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/DialogStart.dialogue"), "start")
+	
+	await Dialog_Balloon.tree_exited
+	Dialog = false
+	stun = false
+	print("GATA")
