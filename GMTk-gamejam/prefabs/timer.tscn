@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cttya3w4fu2r4"]
+
+[ext_resource type="FontFile" uid="uid://csl6n57gbkv5h" path="res://asstes/Tiny5-Regular.ttf" id="1_7sdek"]
+[ext_resource type="Script" uid="uid://bcq5x5lhndl30" path="res://timer.gd" id="2_w30y3"]
+
+[node name="Timer" type="Label" unique_id=90223983]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_7sdek")
+text = "1:00"
+script = ExtResource("2_w30y3")
+
+[node name="Timer" type="Timer" parent="." unique_id=611007038]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
