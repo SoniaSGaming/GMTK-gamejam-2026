@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c1qsedbog86vf"]
+
+[node name="DialogueBalloon" type="Node2D" unique_id=312791403]
+
+[node name="Balloon" type="Control" parent="." unique_id=1619638353]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Balloon" unique_id=2020721887]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 37.0

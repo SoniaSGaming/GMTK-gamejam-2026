@@ -7,6 +7,7 @@ var interact = false
 var stun = false
 @onready var _animated_sprite = $AnimatedSprite2D
 var direction_old
+const Balloon = preload("res://Dialogue/Balloon/balloon.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,16 +19,16 @@ func _process(delta: float) -> void:
 	
 	#_animated_sprite.play("walk_front")
 	
-	if Input.is_action_pressed("up") and stun == false::
+	if Input.is_action_pressed("up") and stun == false:
 		direction.y = -1
 		_animated_sprite.play("walk_back")
-	if Input.is_action_pressed("down") and stun == false::
+	if Input.is_action_pressed("down") and stun == false:
 		direction.y = 1
 		_animated_sprite.play("walk_front")
-	if Input.is_action_pressed("right") and stun == false::
+	if Input.is_action_pressed("right") and stun == false:
 		direction.x = 1
 		_animated_sprite.play("walk_right")
-	if Input.is_action_pressed("left") and stun == false::
+	if Input.is_action_pressed("left") and stun == false:
 		direction.x = -1
 		_animated_sprite.play("walk_left")
 	
@@ -66,7 +67,7 @@ func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 
 func Dialog_Start():
 	
-	var Dialog_Balloon = DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/DialogStart.dialogue"), "start")
+	var Dialog_Balloon = DialogueManager.show_dialogue_balloon_scene(Balloon,load("res://Dialogue/DialogStart.dialogue"),"start")
 	
 	await Dialog_Balloon.tree_exited
 	Dialog = false

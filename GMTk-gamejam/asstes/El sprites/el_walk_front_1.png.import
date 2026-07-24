@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0urj7vsignql"
-path="res://.godot/imported/el_left_walk_1.png-24152d043f3e1d5c30af7572e2afcc4b.ctex"
+uid="uid://ctkh538p1jgg0"
+path="res://.godot/imported/el_walk_front_1.png-c4668ebb1e424fd8ada458027845d260.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/el_left_walk_1.png"
-dest_files=["res://.godot/imported/el_left_walk_1.png-24152d043f3e1d5c30af7572e2afcc4b.ctex"]
+source_file="res://asstes/El sprites/el_walk_front_1.png"
+dest_files=["res://.godot/imported/el_walk_front_1.png-c4668ebb1e424fd8ada458027845d260.ctex"]
 
 [params]
 

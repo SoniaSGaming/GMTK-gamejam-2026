@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crabc07cdspyj"
-path="res://.godot/imported/el_walk_front_2.png-0e452fe357708ac91c215269c2b95e40.ctex"
+uid="uid://cuda5fwef2i88"
+path="res://.godot/imported/tiles_wip.png-1c93bf257995905fdb25d039129f1c8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/el_walk_front_2.png"
-dest_files=["res://.godot/imported/el_walk_front_2.png-0e452fe357708ac91c215269c2b95e40.ctex"]
+source_file="res://asstes/tiles_wip.png"
+dest_files=["res://.godot/imported/tiles_wip.png-1c93bf257995905fdb25d039129f1c8f.ctex"]
 
 [params]
 

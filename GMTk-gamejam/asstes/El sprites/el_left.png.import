@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3smdtoi6cj25"
-path="res://.godot/imported/elback.png-cdef4f3b8c0558b9f37b2c5a0ace12fd.ctex"
+uid="uid://cq1xvjhkvupcm"
+path="res://.godot/imported/el_left.png-a820469a05a780339bcde9998a9e2f97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/elback.png"
-dest_files=["res://.godot/imported/elback.png-cdef4f3b8c0558b9f37b2c5a0ace12fd.ctex"]
+source_file="res://asstes/El sprites/el_left.png"
+dest_files=["res://.godot/imported/el_left.png-a820469a05a780339bcde9998a9e2f97.ctex"]
 
 [params]
 
