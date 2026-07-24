@@ -3,7 +3,7 @@ NPC: El, good to see you! So glad you could join today!
 - El: Any idea what we are doing this time?
 	NPC: Forest cleanup. Storm washed a lot of junk into the trails. Grab a trash bag and join in whenever you're ready.
 	- El: Do you really believe in this work? 
-		NPC: I believe doing something is better than doing nothing. => ending
+		NPC: I believe doing something is better than doing nothing. => start
 	- El: Ah yes. An ancient horror’s biggest fear: recycling.
 		NPC: Very funny. Healthy forests store carbon, healthy ecosystems slow warming, slower warming keeps 087 trapped where it belongs.
 		- El: Have things actually gotten better?
@@ -11,11 +11,11 @@ NPC: El, good to see you! So glad you could join today!
 	- El: How’s it doing?
 		NPC: Still stuck in what remains of the continental glacier. On paper we’ve got a few more years. But every satellite pass looks worse than the last..
 		- El: Have you ever seen 087 up close?
-			NPC: No; only the images. That was close enough. => ending
+			NPC: No; only the images. That was close enough. => start
 		- El: How come we never called it anything other than ‘087’. Everything else has a name. Why not this?
 			NPC: If I were to guess, they don’t know for sure what it is. That generally makes common naming denominators rather useless… Or maybe they thought if they addressed it with numbers instead of words people would be less likely to turn it into a myth. Didn’t work. => ending
 		- El: What do you think will happen if it escapes?
-			NPC: I make a point of not thinking about that. Helps me sleep. => ending
+			NPC: I make a point of not thinking about that. Helps me sleep. => start
 - El: It’s pretty hot today.
 	NPC: You call this hot? Last year's summer hit fifty before noon. I actually managed to wear a long-sleeved shirt this morning.
 	- El: Do you think people still deny it?
@@ -23,11 +23,12 @@ NPC: El, good to see you! So glad you could join today!
 	- El: Remind me, how long have we been doing this?
 		NPC: We must have started about two months after the Fifty-Six Degree Summer. It got pretty hard to argue climate change isn't real after asphalt started melting. => ending
 - El: Do you think we’ll get pizza afterwards?
-	NPC: Depends whether the pizza place gets flooded again today. => ending
+	NPC: Depends whether the pizza place gets flooded again today. => start
 - El: How are you holding up?
-	NPC: Tired. I want a bagel and a nap. But every bag of trash we fill is one more reason to keep showing up. => ending
+	NPC: Tired. I want a bagel and a nap. But every bag of trash we fill is one more reason to keep showing up. => start
 - El: What’s the weirdest thing you’ve found cleaning up?
-	NPC: A backpack. Stuck on a tree branch six meters up. I don’t even want to imagine how it got there. => ending
+	NPC: A backpack. Stuck on a tree branch six meters up. I don’t even want to imagine how it got there. => start
+- El: I'll go start picking up some trash now. Byee!! => ending
 
 ~ ending
 NPC: Well, then I'll leave you to it. Good luck![[]]
