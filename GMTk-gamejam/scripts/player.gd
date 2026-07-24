@@ -9,13 +9,10 @@ var Dialog = false
 var interact = false
 var stun = false
 @onready var _animated_sprite = $AnimatedSprite2D
-var direction_old
 const Balloon = preload("res://Dialogue/Balloon/balloon.tscn")
 var current_npc = null  # the NPC we're currently overlapping
 
 var collection = [0, 0, 0, 0, 0, 0, 0]
-
-@onready var _animated_sprite = $AnimatedSprite2D
 
 func _process(delta: float) -> void:
 	direction_old = direction
@@ -72,11 +69,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		timer.seconds += body.get_time()
 		body.free()
 
-
-func Dialog_Start():
-	
-	var Dialog_Balloon = DialogueManager.show_dialogue_balloon_scene(Balloon,load("res://Dialogue/DialogStart.dialogue"),"start")
-	
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body == current_npc:
 		interact = false
@@ -87,7 +79,7 @@ func Dialog_Start(npc) -> void:
 	var dialogue_resource = npc.get_dialogue_resource()
 	var start_title = npc.get_start_title()
 
-	var Dialog_Balloon = DialogueManager.show_example_dialogue_balloon(dialogue_resource, start_title)
+	var Dialog_Balloon = DialogueManager.show_dialogue_balloon_scene(Balloon,dialogue_resource,start_title)
 
 	await Dialog_Balloon.tree_exited
 	Dialog = false
