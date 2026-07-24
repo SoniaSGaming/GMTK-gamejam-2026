@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dftqpgcdcx8pm"
-path="res://.godot/imported/el_fromt.png-83d5c928edda05c4e26771d138c5ce43.ctex"
+uid="uid://crabc07cdspyj"
+path="res://.godot/imported/el_walk_front_2.png-da860a77795f6d37da5328f9508a2d96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/el_fromt.png"
-dest_files=["res://.godot/imported/el_fromt.png-83d5c928edda05c4e26771d138c5ce43.ctex"]
+source_file="res://asstes/El sprites/el_walk_front_2.png"
+dest_files=["res://.godot/imported/el_walk_front_2.png-da860a77795f6d37da5328f9508a2d96.ctex"]
 
 [params]
 

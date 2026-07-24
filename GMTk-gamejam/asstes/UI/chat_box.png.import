@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0prvlpm6j805"
-path="res://.godot/imported/el_left_walk_2.png-a969a69cf3f8ad59e0014636d5f617e1.ctex"
+uid="uid://yvevn4rkuvnr"
+path="res://.godot/imported/chat_box.png-71974c35aa938d2cd0dab78f4f51011c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstes/el_left_walk_2.png"
-dest_files=["res://.godot/imported/el_left_walk_2.png-a969a69cf3f8ad59e0014636d5f617e1.ctex"]
+source_file="res://asstes/UI/chat_box.png"
+dest_files=["res://.godot/imported/chat_box.png-71974c35aa938d2cd0dab78f4f51011c.ctex"]
 
 [params]
 
